@@ -7,18 +7,24 @@ public class Main {
     }
 
     public static boolean isPalindrome(String input) {
-        String preparedInput = input.trim().toLowerCase();
-        int left = 0;
-        int right = preparedInput.length() - 1;
+        if ((input == null) || input.isEmpty()){
+            return false;
+        }
+        else {
+            String preparedInput = input.trim().toLowerCase();
+            int left = 0;
+            int right = preparedInput.length() - 1;
 
-        while (left < right) {
-            if (preparedInput.charAt(left) != preparedInput.charAt(right)) {
-                return false;
+            while (left < right) {
+                if (preparedInput.charAt(left) != preparedInput.charAt(right)) {
+                    return false;
+                }
+                left++;
+                right--;
             }
-            left++;
-            right--;
+
+            return true;
         }
 
-        return true;
     }
 }
